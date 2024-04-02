@@ -3,6 +3,7 @@
 # 编译
 go build
 # 使用
+```
 ➜ GOLAND  go run .\main.go                                                                        
   -c    该参数表示过滤出包含指定字符串的文件的相对路径，不加则过滤出不包含指定字符串的文件的相对路径
   -e string
@@ -26,3 +27,4 @@ go run main.go -f /vuln_code/  -k 'exec' -c -e php -o output.txt
 
 3、开启正则搜索
 go run main.go -f /vuln_code/  -k '(exec|Runtime)' -c -r -e php -o output.txt
+```
