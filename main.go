@@ -57,6 +57,7 @@ func main() {
 			defer wg.Done()
 			for filePath := range fileCh {
 				if matchExtensions(filepath.Ext(filePath), *extPtr) {
+
 					if containsInFile(filePath, *searchPtr, *regexPtr) {
 						filePath, _ := filepath.Rel(*folderPtr, filePath)
 						if *containsPtr {
@@ -66,6 +67,7 @@ func main() {
 							resultCh <- filePath
 						}
 					} else {
+						filePath, _ := filepath.Rel(*folderPtr, filePath)
 						if !*containsPtr {
 							mu.Lock()
 							fileContent += filePath + "\n"
