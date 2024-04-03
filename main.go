@@ -28,19 +28,19 @@ func main() {
 	if *helpPtr {
 		flag.PrintDefaults()
 		fmt.Println("使用方式:")
-		fmt.Println("go run main.go -f <文件夹路径> [-c] -k <要搜索的字符串> [-r] [-o <输出文件路径>] [-e <文件后缀:jsp,html...>] [-h]")
+		fmt.Println("CodeSearchHelper.exe -f <文件夹路径> [-c] -k <要搜索的字符串> [-r] [-o <输出文件路径>] [-e <文件后缀:jsp,html...>] [-h]")
 		fmt.Println("示例:")
-		fmt.Println("go run main.go -f /path/to/folder -c  -k 'exec' -e php -o output.txt")
+		fmt.Println("CodeSearchHelper.exe -f /path/to/folder -c  -k 'exec' -e php -o output.txt")
 		return
 	}
 
 	// 检查是否指定了文件夹路径
-	if *folderPtr == "" {
+	if *folderPtr == "" || *searchPtr == "" {
 		flag.PrintDefaults()
 		fmt.Println("使用方式:")
-		fmt.Println("go run main.go -f <文件夹路径> [-c] -k <要搜索的字符串> [-r] [-o <输出文件路径>] [-e <文件后缀:jsp,html...>] [-h]")
+		fmt.Println("CodeSearchHelper.exe -f <文件夹路径> [-c] -k <要搜索的字符串> [-r] [-o <输出文件路径>] [-e <文件后缀:jsp,html...>] [-h]")
 		fmt.Println("示例:")
-		fmt.Println("go run main.go -f /path/to/folder -c  -k 'exec' -e php -o output.txt")
+		fmt.Println("CodeSearchHelper.exe -f /path/to/folder -c  -k 'exec' -e php -o output.txt")
 		return
 	}
 
