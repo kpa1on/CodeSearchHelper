@@ -60,6 +60,7 @@ func main() {
 
 					if containsInFile(filePath, *searchPtr, *regexPtr) {
 						filePath, _ := filepath.Rel(*folderPtr, filePath)
+						filePath = strings.ReplaceAll(filePath, "\\", "/")
 						if *containsPtr {
 							mu.Lock()
 							fileContent += filePath + "\n"
@@ -68,6 +69,7 @@ func main() {
 						}
 					} else {
 						filePath, _ := filepath.Rel(*folderPtr, filePath)
+						filePath = strings.ReplaceAll(filePath, "\\", "/")
 						if !*containsPtr {
 							mu.Lock()
 							fileContent += filePath + "\n"
